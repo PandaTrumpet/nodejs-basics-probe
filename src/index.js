@@ -1,7 +1,7 @@
 // const message = 'Hello Pasdssss';
 // console.log(message);
-import fs from 'node:fs/promises';
-import path from 'node:path';
+// import fs from 'node:fs/promises';
+// import path from 'node:path';
 // --------------------Sync-------------------
 // console.log(content);
 // console.log(content.toString('utf-8'));
@@ -40,3 +40,30 @@ import path from 'node:path';
 // console.log(oldFile);
 // const newFile = path.join(workid, 'NewText.txt');
 // fs.rename(oldFile, newFile);
+
+// ==================Lesson 2====================
+import { readFileAsync } from './scripts/readFileAsync.js';
+import { readFileCallback } from './scripts/readFileCallback.js';
+import { readFileSync } from './scripts/readFileSync.js';
+
+readFileAsync();
+readFileCallback();
+readFileSync();
+
+const fileOperation = async () => {
+  switch (key) {
+    case 'read':
+      break;
+    case 'read':
+      break;
+    case 'read':
+      break;
+    case 'read':
+      break;
+    case 'read':
+      break;
+    default:
+      console.log('Unknown operation');
+      break;
+  }
+};
