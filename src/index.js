@@ -56,22 +56,59 @@ const filePath = path.join(workdir, 'src', 'text.txt');
 const fileOperation = async ({ action }) => {
   switch (action) {
     case 'read': {
-      const result = fs.readFile(filePath, 'utf-8');
+      const result = await fs.readFile(filePath, 'utf-8');
       console.log(result);
       break;
     }
-    case 'add':
+    case 'add': {
+      const append = await fs.appendFile(filePath, 'PandaTrumpet');
+      console.log(append);
       break;
-    case 'rep lace':
+    }
+    case 'replace': {
+      const replace = await fs.writeFile(filePath, 'New Contacts');
+      console.log(replace);
       break;
-    case 'rename':
+    }
+
+    case 'rename': {
+      const rename = await fs.rename(
+        filePath,
+        path.join(process.cwd(), 'src', 'db', 'text.txt'),
+      );
+      console.log(rename);
       break;
-    case 'delete ':
+    }
+    case 'delete': {
+      fs.unlink(filePath);
+
       break;
+    }
+    case 'canAccess': {
+      try {
+        await fs.access(filePath);
+      } catch (error) {
+        if (error.code === 'ENOENT') {
+          console.log('File dont exist');
+        } else {
+          console.log('Domth happen');
+        }
+        console.log(error);
+      }
+
+      break;
+    }
+    case 'readDir': {
+      const files = await fs.readdir(process.cwd());
+      console.log('Files in directory', files);
+      break;
+    }
     default:
       console.log('Unknown operation');
       break;
   }
 };
 
-fileOperation({ action: 'read' });
+fileOperation({ action: 'readDir' });
+// fileOperation({ action: 'add' });
+// fileOperation({ action: 'rename' });
