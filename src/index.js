@@ -42,28 +42,36 @@
 // fs.rename(oldFile, newFile);
 
 // ==================Lesson 2====================
-import { readFileAsync } from './scripts/readFileAsync.js';
-import { readFileCallback } from './scripts/readFileCallback.js';
-import { readFileSync } from './scripts/readFileSync.js';
+// import { readFileAsync } from './scripts/readFileAsync.js';
+// import { readFileCallback } from './scripts/readFileCallback.js';
+// import { readFileSync } from './scripts/readFileSync.js';
+import path from 'path';
+import fs from 'fs/promises';
+// readFileAsync();
+// readFileCallback();
+// readFileSync();
 
-readFileAsync();
-readFileCallback();
-readFileSync();
-
-const fileOperation = async () => {
-  switch (key) {
-    case 'read':
+const workdir = path.join(process.cwd());
+const filePath = path.join(workdir, 'src', 'text.txt');
+const fileOperation = async ({ action }) => {
+  switch (action) {
+    case 'read': {
+      const result = fs.readFile(filePath, 'utf-8');
+      console.log(result);
       break;
-    case 'read':
+    }
+    case 'add':
       break;
-    case 'read':
+    case 'rep lace':
       break;
-    case 'read':
+    case 'rename':
       break;
-    case 'read':
+    case 'delete ':
       break;
     default:
       console.log('Unknown operation');
       break;
   }
 };
+
+fileOperation({ action: 'read' });
