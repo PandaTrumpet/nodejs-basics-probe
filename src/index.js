@@ -51,64 +51,74 @@ import fs from 'fs/promises';
 // readFileCallback();
 // readFileSync();
 
-const workdir = path.join(process.cwd());
-const filePath = path.join(workdir, 'src', 'text.txt');
-const fileOperation = async ({ action }) => {
-  switch (action) {
-    case 'read': {
-      const result = await fs.readFile(filePath, 'utf-8');
-      console.log(result);
-      break;
-    }
-    case 'add': {
-      const append = await fs.appendFile(filePath, 'PandaTrumpet');
-      console.log(append);
-      break;
-    }
-    case 'replace': {
-      const replace = await fs.writeFile(filePath, 'New Contacts');
-      console.log(replace);
-      break;
-    }
+// const workdir = path.join(process.cwd());
 
-    case 'rename': {
-      const rename = await fs.rename(
-        filePath,
-        path.join(process.cwd(), 'src', 'db', 'text.txt'),
-      );
-      console.log(rename);
-      break;
-    }
-    case 'delete': {
-      fs.unlink(filePath);
+// const filePath = path.join(workdir, 'src', 'text.txt');
+// const fileOperation = async ({ action }) => {
+//   switch (action) {
+//     case 'read': {
+//       const result = await fs.readFile(filePath, 'utf-8');
+//       console.log(result);
+//       break;
+//     }
+//     case 'add': {
+//       const append = await fs.appendFile(filePath, 'PandaTrumpet');
+//       console.log(append);
+//       break;
+//     }
+//     case 'replace': {
+//       const replace = await fs.writeFile(filePath, 'New Contacts');
+//       console.log(replace);
+//       break;
+//     }
 
-      break;
-    }
-    case 'canAccess': {
-      try {
-        await fs.access(filePath);
-      } catch (error) {
-        if (error.code === 'ENOENT') {
-          console.log('File dont exist');
-        } else {
-          console.log('Domth happen');
-        }
-        console.log(error);
-      }
+//     case 'rename': {
+//       const rename = await fs.rename(
+//         filePath,
+//         path.join(process.cwd(), 'src', 'db', 'text.txt'),
+//       );
+//       console.log(rename);
+//       break;
+//     }
+//     case 'delete': {
+//       fs.unlink(filePath);
 
-      break;
-    }
-    case 'readDir': {
-      const files = await fs.readdir(process.cwd());
-      console.log('Files in directory', files);
-      break;
-    }
-    default:
-      console.log('Unknown operation');
-      break;
-  }
-};
+//       break;
+//     }
+//     case 'canAccess': {
+//       try {
+//         await fs.access(filePath);
+//       } catch (error) {
+//         if (error.code === 'ENOENT') {
+//           console.log('File dont exist');
+//         } else {
+//           console.log('Domth happen');
+//         }
+//         console.log(error);
+//       }
 
-fileOperation({ action: 'readDir' });
+//       break;
+//     }
+//     case 'readDir': {
+//       const files = await fs.readdir(process.cwd());
+//       console.log('Files in directory', files);
+//       break;
+//     }
+//     default:
+//       console.log('Unknown operation');
+//       break;
+//   }
+// };
+
+// fileOperation({ action: 'readDir' });
 // fileOperation({ action: 'add' });
 // fileOperation({ action: 'rename' });
+
+const student = {
+  id: 123,
+  name: 'Panda',
+  age: 26,
+  cource: ['cs', 'Ht'],
+  gender: 'male',
+};
+console.log(student);
