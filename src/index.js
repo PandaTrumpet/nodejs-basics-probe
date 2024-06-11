@@ -114,11 +114,15 @@ import fs from 'fs/promises';
 // fileOperation({ action: 'add' });
 // fileOperation({ action: 'rename' });
 
-const student = {
-  id: 123,
-  name: 'Panda',
-  age: 26,
-  cource: ['cs', 'Ht'],
-  gender: 'male',
-};
-console.log(student);
+// const student = {
+//   id: 123,
+//   name: 'Panda',
+//   age: 26,
+//   cource: ['cs', 'Ht'],
+//   gender: 'male',
+// };
+// console.log(student);
+
+// ========================Lesson 1(new teacher)=================================
+const arr = ['Jelf', 'sdf'];
+console.log(...arr);
