@@ -45,8 +45,8 @@
 // import { readFileAsync } from './scripts/readFileAsync.js';
 // import { readFileCallback } from './scripts/readFileCallback.js';
 // import { readFileSync } from './scripts/readFileSync.js';
-import path from 'path';
-import fs from 'fs/promises';
+// import path from 'path';
+// import fs from 'fs/promises';
 // readFileAsync();
 // readFileCallback();
 // readFileSync();
@@ -123,6 +123,4 @@ import fs from 'fs/promises';
 // };
 // console.log(student);
 
-// ========================Lesson 1(new teacher)=================================
-const arr = ['Jelf', 'sdf'];
-console.log(...arr);
+// ============================================Занятие 2========================================
